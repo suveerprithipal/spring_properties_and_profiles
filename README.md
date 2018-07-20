@@ -5,15 +5,15 @@ Today I have a very simple application for you to demonstrate how to use profile
 # Why?
 So we can swap profiles when testing locally vs a cloud or dev vs test
 
-Firstly, we need to create an envirnmental variable.
+Firstly, we need to create an environmental variable.
 To do so, on windows10, 
   1) search for "advanced system settings"
-  2) Click Enviroment Variable
+  2) Click Environment Variable
   3) Click "New" under 'System Variables'
   4) Set Variable name of 'APP_URL'
   5) Set Variable value of 'cloud' 
   
-Next up I created a Maven project and added in my Spring boot dependancies.
+Next up I created a Maven project and added in my Spring boot dependencies.
 We then need to create some profiles. Easy peasy. To do so, we actually create properties files. Yep, that simple.
 Under your java/test filepath, create a resources dir. 
 Remember to right click and mark as 'test Resources Root'
@@ -35,7 +35,7 @@ Create 2 properties files:
  Create a test or use the one created by default if you have one.
  
  In our test class, create a class member of type 'Environment'(org.springframework.core.env.Environment). I called mine "env".
- Dont forget to Autowire(org.springframework.beans.factory.annotation.Autowired) this member as we want a bean created for this at runtime. 
+ Don’t forget to Autowire(org.springframework.beans.factory.annotation.Autowired) this member as we want a bean created for this at runtime. 
 
 We create 2 tests: 
   - localTest
@@ -50,7 +50,7 @@ These are very similar in nature, but have 2 different asserts:
  Lastly, we want to specify which profile spring should use when running. 
  To do this, we will add a VM Option to the Run Configuration.
  
- I ran my 2 tests abgove individually. This create a run configuration for me automatically. 
+ I ran my 2 tests above individually. This create a run configuration for me automatically. 
  I then go to edit these configs.
  
  localTest Run config:
@@ -65,6 +65,6 @@ These are very similar in nature, but have 2 different asserts:
  You will see that the local env.getProperty will return "local" and 
  cloud env.getProperty will return cloud, which we set on the system.
  
- Thats it! You're done! Happy Testing.
+ That’s it! You're done! Happy Testing.
  
- 
+
