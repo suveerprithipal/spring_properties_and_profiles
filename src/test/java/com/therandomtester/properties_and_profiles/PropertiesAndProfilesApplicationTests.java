@@ -20,11 +20,13 @@ public class PropertiesAndProfilesApplicationTests {
 
     @Test
     public void localTest() {
+        logger.info("My Active profile is " + env.getActiveProfiles()[0]);
         Assert.assertEquals("local", env.getProperty("my.app.url"));
     }
 
     @Test
     public void cloudTest() {
-        Assert.assertEquals("http://rome:9001", env.getProperty("my.app.url"));
+        logger.info("My Active profile is " + env.getActiveProfiles()[0]);
+        Assert.assertEquals("cloud", env.getProperty("my.app.url"));
     }
 }
