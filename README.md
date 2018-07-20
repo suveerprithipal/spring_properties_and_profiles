@@ -7,7 +7,7 @@ So we can swap profiles when testing locally vs a cloud or dev vs test
 
 Firstly, we need to create an environmental variable.
 To do so, on windows10, 
-  1) search for "advanced system settings"
+  1) Search for "advanced system settings"
   2) Click Environment Variable
   3) Click "New" under 'System Variables'
   4) Set Variable name of 'APP_URL'
@@ -21,21 +21,21 @@ Create 2 properties files:
   - properties-local.properites
   - properties-cloud.properties
   
- In each of them, add a variable called 'my.app.url' as the following demonstrates.
+In each of them, add a variable called 'my.app.url' as the following demonstrates.
   - in properties-local.properites:
     my.app.url = local
     
   - in properties-cloud.properites:
     my.app.url = ${app_url}
     
-  We use "${app_url}" here as we want to point our test to use the system variable we created.
-  When springboot runs, and see's "${}" it knows to go looking for a definition on that variable on the system.
+We use "${app_url}" here as we want to point our test to use the system variable we created.
+When springboot runs, and see's "${}" it knows to go looking for a definition on that variable on the system.
     
- We're almost done! and now in a position to add some tests to access these variables we've created above..
- Create a test or use the one created by default if you have one.
+We're almost done! and now in a position to add some tests to access these variables we've created above..
+Create a test or use the one created by default if you have one.
  
- In our test class, create a class member of type 'Environment'(org.springframework.core.env.Environment). I called mine "env".
- Don’t forget to Autowire(org.springframework.beans.factory.annotation.Autowired) this member as we want a bean created for this at runtime. 
+In our test class, create a class member of type 'Environment'(org.springframework.core.env.Environment). I called mine "env".
+Don’t forget to Autowire(org.springframework.beans.factory.annotation.Autowired) this member as we want a bean created for this at runtime. 
 
 We create 2 tests: 
   - localTest
