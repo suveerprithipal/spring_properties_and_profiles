@@ -42,10 +42,10 @@ We create 2 tests:
   - cloudTest
   
 These are very similar in nature, but have 2 different asserts:
-  - localTest
-       Assert.assertEquals("local", env.getProperty("my.app.url"));
-  - cloudTest
-       Assert.assertEquals("cloud", env.getProperty("my.app.url"));
+  -- localTest
+       -- Assert.assertEquals("local", env.getProperty("my.app.url"));
+  -- cloudTest
+       -- Assert.assertEquals("cloud", env.getProperty("my.app.url"));
  
  Lastly, we want to specify which profile spring should use when running. 
  To do this, we will add a VM Option to the Run Configuration.
@@ -53,11 +53,11 @@ These are very similar in nature, but have 2 different asserts:
  I ran my 2 tests above individually. This create a run configuration for me automatically. 
  I then go to edit these configs.
  
- localTest Run config:
+ -- localTest Run config:
  I set the VM option to : -Dspring.profiles.active=local
  Apply and save.
  
- cloudTest Run config:
+ -- cloudTest Run config:
  I set the VM option to : -Dspring.profiles.active=cloud
  Apply and save.
  
