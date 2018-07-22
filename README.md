@@ -18,8 +18,8 @@ We then need to create some profiles. Easy peasy. To do so, we actually create p
 Under your java/test filepath, create a resources dir. 
 Remember to right click and mark as 'test Resources Root'
 Create 2 properties files:
-  - properties-local.properites
-  - properties-cloud.properties
+  -- properties-local.properites
+  -- properties-cloud.properties
   
 In each of them, add a variable called 'my.app.url' as the following demonstrates.
   - in properties-local.properites:
