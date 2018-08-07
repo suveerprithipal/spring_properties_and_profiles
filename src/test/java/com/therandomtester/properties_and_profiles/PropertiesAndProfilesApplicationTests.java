@@ -20,13 +20,26 @@ public class PropertiesAndProfilesApplicationTests {
 
     @Test
     public void localTest() {
+        logger.info("**************");
         logger.info("My Active profile is " + env.getActiveProfiles()[0]);
         Assert.assertEquals("local", env.getProperty("my.app.url"));
+        logger.info("**************");
     }
 
     @Test
     public void cloudTest() {
+        logger.info("**************");
         logger.info("My Active profile is " + env.getActiveProfiles()[0]);
         Assert.assertEquals("cloud", env.getProperty("my.app.url"));
+        logger.info("**************");
     }
+
+    @Test
+    public void printEnvVar() {
+        logger.info("**************");
+        logger.info("Passing in var at Runtime using run config. No Profile needed.");
+        logger.info(env.getProperty("my.app.url"));
+        logger.info("**************");
+    }
+
 }
